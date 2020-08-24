@@ -2142,11 +2142,11 @@ var setMixin = {
 
 "push shift unshift forEach some every join sort".split(' ').forEach(function (e,i) {
     setMixin[e] = function () { return Array.prototype[e].apply(this._items, arguments); };
-    setMixin[e].name = e;
+    // setMixin[e].name = e;
 });
 "filter slice map".split(' ').forEach(function (e,i) {
     setMixin[e] = function () { return new Set(Array.prototype[e].apply(this._items, arguments), true); };
-    setMixin[e].name = e;
+    // setMixin[e].name = e;
 });
 
 var Set = typal.construct(setMixin).mix({
